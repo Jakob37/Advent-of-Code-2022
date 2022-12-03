@@ -1,4 +1,4 @@
 day[1-9]
-day1_2
+day[1-9]_2
 target/
 *.lock

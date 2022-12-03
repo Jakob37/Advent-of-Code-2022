@@ -8,8 +8,11 @@ fn main() {
     let contents = fs::read_to_string(file_path)
         .expect("No file found");
     
+    let mut sum_score = 0;
     for row in contents.split("\n") {
-        let (their_hand, your_hand) = row.split_at(1);
+        let mut split = row.split(' ');
+        let their_hand = split.next().unwrap();
+        let your_hand = split.next().unwrap();
 
         let your_hand_transl = if your_hand == "X" {
             "A"
@@ -20,16 +23,33 @@ fn main() {
         };
 
         let score = calculate_score(your_hand_transl, their_hand);
-        // let score = 5;
-        println!("Row {} score {}", row, score);
+        // println!("Row {} score {}", row, score);
+        sum_score += score;
     }
+    println!("Final score: {}", sum_score);
 }
 
 fn calculate_score(your_hand: &str, their_hand: &str) -> i32 {
 
-    if your_hand == their_hand {
+    let hand_score = if your_hand == "A" {
         1
+    } else if your_hand == "B" {
+        2
+    } else {
+        3
+    };
+
+    let is_win = (their_hand == "A" && your_hand == "B") ||
+        (their_hand == "B" && your_hand == "C") ||
+        (their_hand == "C" && your_hand == "A");
+
+    let win_score = if is_win {
+        6
+    } else if your_hand == their_hand {
+        3
     } else {
         0
-    }
+    };
+
+    return hand_score + win_score;
 }
