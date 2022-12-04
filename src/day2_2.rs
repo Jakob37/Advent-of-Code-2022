@@ -1,9 +1,9 @@
-use std::env;
+// use std::env;
 use std::fs;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file_path = &args[1];
+fn main(file_path: &str) -> isize {
+    // let args: Vec<String> = env::args().collect();
+    // let file_path = &args[1];
 
     let contents = fs::read_to_string(file_path)
         .expect("No file found");
@@ -26,12 +26,13 @@ fn main() {
         // println!("Row {} score {}", row, score);
         sum_score += score;
     }
-    println!("Final score: {}", sum_score);
+    // println!("Final score: {}", sum_score);
+    sum_score
 }
 
 // This is kind off brute-force, I realize that an array and the modal
 // operator could solve this more elegantly
-fn calculate_score(expected_outcome: &str, their_hand: &str) -> i32 {
+fn calculate_score(expected_outcome: &str, their_hand: &str) -> isize {
 
     let used_hand;
 

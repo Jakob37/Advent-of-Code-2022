@@ -1,10 +1,10 @@
 use std::collections::HashSet;
-use std::env;
+// use std::env;
 use std::fs;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file_path = &args[1];
+fn main(file_path: &str) {
+    // let args: Vec<String> = env::args().collect();
+    // let file_path = &args[1];
     let contents = fs::read_to_string(file_path).expect("No file found");
     let mut tot_score = 0;
 

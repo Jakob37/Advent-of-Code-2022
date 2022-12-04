@@ -1,10 +1,10 @@
 use std::collections::HashSet;
-use std::env;
+// use std::env;
 use std::fs;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file_path = &args[1];
+fn main(file_path: &str) -> isize {
+    // let args: Vec<String> = env::args().collect();
+    // let file_path = &args[1];
     let contents = fs::read_to_string(file_path).expect("No file found");
     let mut tot_score = 0;
 
@@ -36,7 +36,8 @@ fn main() {
         index += 1;
     }
 
-    println!("Total score: {}", tot_score);
+    tot_score
+    // println!("Total score: {}", tot_score);
 }
 
 fn get_shared_char(row1: &str, row2: &str, row3: &str) -> char {

@@ -1,14 +1,13 @@
-use std::env;
 use std::fs;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let file_path = &args[1];
+fn main(file_path: &str) -> isize {
+    // let args: Vec<String> = env::args().collect();
+    // let file_path = &args[1];
 
     let contents = fs::read_to_string(file_path)
         .expect("No file found");
     
-    let mut sum_score = 0;
+    let mut sum_score: isize = 0;
     for row in contents.split("\n") {
         let mut split = row.split(' ');
         let their_hand = split.next().unwrap();
@@ -26,10 +25,11 @@ fn main() {
         // println!("Row {} score {}", row, score);
         sum_score += score;
     }
-    println!("Final score: {}", sum_score);
+    // println!("Final score: {}", sum_score);
+    sum_score
 }
 
-fn calculate_score(your_hand: &str, their_hand: &str) -> i32 {
+fn calculate_score(your_hand: &str, their_hand: &str) -> isize {
 
     let hand_score = if your_hand == "A" {
         1
