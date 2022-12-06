@@ -25,6 +25,7 @@ fn main() {
     // let day5_result: isize = day5::part_one(util::load_path("data/day5_sample.txt"));
 
     day6::part_one(util::load_path("data/day6_full.txt"));
+    day6::part_two(util::load_path("data/day6_full.txt"));
     // println!("Day 6 result: {}", day6_1_result);
 
     // println!("Day 5 result: {}", day5_result);

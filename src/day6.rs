@@ -11,6 +11,16 @@ pub fn part_one(rows: Vec<String>) {
     }
 }
 
+pub fn part_two(rows: Vec<String>) {
+    let window_size = 14;
+
+    for row in rows {
+        let found_pos = find_non_unique_pos(row, window_size);
+
+        println!("Found pos: {}", found_pos);
+    }
+}
+
 fn find_non_unique_pos(row: String, window_size: usize) -> usize {
     let row_chars = row.chars();
     let end_iter_pos: usize = row_chars.count() - window_size;
