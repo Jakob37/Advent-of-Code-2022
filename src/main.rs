@@ -6,7 +6,8 @@
 // mod day3_2;
 // mod day4;
 // mod day4_2;
-mod day5;
+// mod day5;
+mod day6;
 
 mod util;
 
@@ -21,9 +22,12 @@ fn main() {
     // let day3_2_result = day3_2::main("data/day3_sample.txt");
     // let day4_result = day4::main("data/day4_sample.txt");
     // let day4_2_result = day4_2::main("data/day4_sample.txt");
-    let day5_result: isize = day5::part_one(util::load_path("data/day5_sample.txt"));
+    // let day5_result: isize = day5::part_one(util::load_path("data/day5_sample.txt"));
 
-    println!("Day 5 result: {}", day5_result);
+    day6::part_one(util::load_path("data/day6_full.txt"));
+    // println!("Day 6 result: {}", day6_1_result);
+
+    // println!("Day 5 result: {}", day5_result);
 
 
     // println!("Day 1 result: {}", day1_result);
