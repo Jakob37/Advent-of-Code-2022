@@ -8,7 +8,8 @@
 // mod day4_2;
 // mod day5;
 // mod day6;
-mod day7;
+// mod day7;
+mod day9;
 
 mod util;
 
@@ -26,9 +27,12 @@ fn main() {
     // day6::part_one(util::load_path("data/day6_full.txt"));
     // day6::part_two(util::load_path("data/day6_full.txt"));
 
-    day7::part_one(util::load_path("data/day7_sample.txt"));    
-    day7::part_one(util::load_path("data/day7_full.txt"));    
-    day7::part_two(util::load_path("data/day7_sample.txt"));    
+    // day7::part_one(util::load_path("data/day7_sample.txt"));    
+    // day7::part_one(util::load_path("data/day7_full.txt"));    
+    // day7::part_two(util::load_path("data/day7_sample.txt"));    
+    day9::part_one(util::load_path("data/day9_sample.txt"), 1);    
+    day9::part_one(util::load_path("data/day9_2_sample.txt"), 10);    
+    // day9::part_one(util::load_path("data/day9_full.txt"));    
     // day7::part_two(util::load_path("data/day7_full.txt"));    
 
 
